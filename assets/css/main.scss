@@ -1,0 +1,98 @@
+// Variables Responsive
+// --------------------
+$breakpoint-xs: 599px;
+$breakpoint-sm: 600px;
+$breakpoint-md: 900px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1800px;
+
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (max-width: $breakpoint-sm) { @content; }
+  }
+  @else if $media == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @else if $media == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @else if $media == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  @else if $media == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Container Principal
+// --------------------
+.bloque{
+
+
+  &.bloque-navbar{
+    padding-top: 110px; //76+34
+
+  }
+
+  &.bloque-principal {    
+    //padding-top: 76px; // reasignado
+    background: url("/bg_1.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+
+    @include media(sm) {
+        height: 100vh;
+    }
+  }
+    
+}
+
+// Títulos
+// -------
+.titulo-1{
+  font-size: 2.2rem;
+  font-weight: bold;
+  position: relative;
+
+  &::after{
+    content: '';
+    background-color: var(--main-color-1);
+    border-radius: 10px;
+    position: absolute;
+    width: 60px;
+    height: 12px;
+    bottom: 4px;
+    left: -5px;
+    z-index: -2;
+  }
+}
+
+.subtitulo-1{
+  max-width: 70%;  
+  margin-bottom: 2rem;
+}
+
+.subtitulo-2{
+  font-size: 1.1rem
+}
+  
+  
+@media (min-width: 768px) {
+    .container-main {
+    //   padding-top: 76px;
+    //   background: url("/bg_1.jpg");
+    //   background-position: center;
+    //   background-size: cover;
+    //   height: 100vh;
+    }
+  
+    .dato-item.fecha {
+      width: 140px;
+    }
+  
+    .dato-item.lugar {
+      width: 240px;
+    }
+  }

@@ -29,7 +29,7 @@ In this example we will be deploying a simple "Hello World" example with Nuxt st
 
 - Create a `pages` folder with an `index.vue` file with the following code:
 
-```
+``` jsx
 <template>
   <section>
     <div>
