@@ -27,20 +27,29 @@
       </div>
     </section>
 
-    <!-- Bloque Sec -->
+    <!-- Bloque DESCRIPCIÓN -->
     <section class="bloque-descripcion">
       <div class="container">
-        <h2>Compartimos conocimiento</h2>
-        <p>
-          El Simposio tiene como objetivo fortalecer la red de conocimiento en energías renovables,
-          además de generar espacios de propuestas en el sector energético con viabilidad técnica,
-          social , ambiental y económica para un desarrollo sostenible.
-        </p>
+        <div class="bloque-descripcion--contenido">
+          <section>
+            <h2 class="titulo-1">Compartimos conocimiento</h2>
+            <p>
+              El Simposio tiene como objetivo fortalecer la red de conocimiento en energías renovables,
+              además de generar espacios de propuestas en el sector energético con viabilidad técnica,
+              social, ambiental y económica para un desarrollo sostenible.
+            </p>
+          </section>
+          <img
+            src="https://simposio-energias-renovables.firebaseapp.com/static/img/video-captura.006203a.jpg"
+            width="270"
+            class="img-video"
+          />
+        </div>
       </div>
     </section>
 
-    <!-- Bloque Sec -->
-    <section class="bloque-ejes">
+    <!-- Bloque EJES -->
+    <section class="bloque-ejes pt-0">
       <div class="container">
         <h2 class="titulo-1">Ejes temáticos</h2>
         <div class="row mt-5">
@@ -59,6 +68,30 @@
           <div class="col eje">
             <img src="/icon-futuro.png" alt srcset />
             <p class="mt-2">Presente y futuro de las energías renovables</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloque AUSPICIOS -->
+    <section class="bloque-auspicios">
+      <div class="container text-center">
+        <h5>AUSPICIAN</h5>
+        <div class="row">
+          <div class="col">
+            <img src="/logos/auspicios/te-logo.svg" width="150px" srcset />
+          </div>
+          <div class="col">
+            <img src="/logos/auspicios/logitech-logo.svg" width="150px" srcset />
+          </div>
+          <div class="col">
+            <img src="/logos/auspicios/bticino-logo.svg" width="150px" srcset />
+          </div>
+        </div>
+        <H5 class="mt-5">CON EL APOYO DE</H5>
+        <div class="row">
+          <div class="col">
+            <img src="/logos/auspicios/ieee-peru-logo-04.svg" width="150px" srcset />
           </div>
         </div>
       </div>
@@ -89,9 +122,22 @@ export default {
   }
 
   .bloque-descripcion {
-    background-color: #bed062;
+    // background-color: #bed062;
     color: #404040;
     padding: 50px 0;
+
+    .bloque-descripcion--contenido {
+      display: flex;
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.9rem;
+      }
+      .img-video {
+        border-radius: 5px;
+        margin-left: 20px;
+      }
+    }
   }
 
   .bloque-ejes {
@@ -102,6 +148,10 @@ export default {
     }
   }
 
+  .bloque-auspicios{
+    background-color: #bed062;
+    padding: 50px 0;
+  }
   .datos > div {
   }
 }
@@ -109,7 +159,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
 }
 </style>
 
