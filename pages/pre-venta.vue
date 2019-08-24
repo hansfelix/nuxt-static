@@ -48,7 +48,6 @@
       </div>
     </section>
 
-    <!-- Bloque EJES -->
     <section class="bloque-ejes pt-0">
       <div class="container">
         <h2 class="titulo-1">Ejes temáticos</h2>
@@ -68,6 +67,72 @@
           <div class="col eje">
             <img src="/icon-futuro.png" alt srcset />
             <p class="mt-2">Presente y futuro de las energías renovables</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloque PONENTES -->
+    <section class="bloque-ponentes">
+      <div class="container">
+        <h2 class="titulo-1 pb-4">Ponentes</h2>
+        <div class="row">
+          <div class="col ponente">
+            <img src="/ponentes/javier-peon.png" width="140px" height="140px" class="ponente__img" />
+            <h4 class="ponente__nombre">Javier Peón</h4>
+          </div>
+          <div class="col ponente">
+            <img src="/ponentes/cesar-butron.jpg" width="140px" height="140px" class="ponente__img" />
+            <h4 class="ponente__nombre">César Butron</h4>
+          </div>
+          <div class="col ponente">
+            <img src="/ponentes/adolfo-rojas.jpg" width="140px" height="140px" class="ponente__img" />
+            <h4 class="ponente__nombre">Adolfo Rojas</h4>
+          </div>
+          <div class="col ponente">
+            <img src="/ponentes/daniel-cumpa.jpg" width="140px" height="140px" class="ponente__img" />
+            <h4 class="ponente__nombre">Denis Zarate</h4>
+          </div>
+          <div class="col ponente">
+            <img
+              src="/ponentes/david-humpire.jpg"
+              width="140px"
+              height="150px"
+              class="ponente__img"
+            />
+            <h4 class="ponente__nombre">Rodolfo Zamalloa</h4>
+          </div>
+        </div>
+        <div class="row pt-4">
+          <div class="col ponente">
+            <img src="/ponentes/tomas-luy.jpg" width="140px" height="140px" class="ponente__img" />
+            <h4 class="ponente__nombre">Jorge Guimac</h4>
+          </div>
+          <div class="col ponente">
+            <img
+              src="/ponentes/orlando-chavez.jpg"
+              width="140px"
+              height="140px"
+              class="ponente__img"
+            />
+            <h4 class="ponente__nombre">Darwin Medina</h4>
+          </div>
+          <div class="col ponente">
+            <img src="/ponentes/luis-flores.jpg" width="140px" height="140px" class="ponente__img" />
+            <h4 class="ponente__nombre">Riquel Mitma</h4>
+          </div>
+          <div class="col ponente">
+            <img
+              src="/ponentes/edwin-derteano.jpg"
+              width="140px"
+              height="140px"
+              class="ponente__img"
+            />
+            <h4 class="ponente__nombre">Luis Espinoza</h4>
+          </div>
+          <div class="col ponente">
+            <img src="/ponentes/alberto-rios.jpg" width="140px" height="150px" class="ponente__img" />
+            <h4 class="ponente__nombre">Alberto Rios</h4>
           </div>
         </div>
       </div>
@@ -148,13 +213,31 @@ export default {
     }
   }
 
-  .bloque-auspicios{
-    background-color: #bed062;
+  .bloque-ponentes {
+    background-color: var(--main-color-1);
+    padding: 50px 0;
+    // color: white;
+
+    .ponente {
+      text-align: center;
+
+      .ponente__img {
+        border-radius: 50%;
+      }
+
+      .ponente__nombre {
+        margin: 15px 0;
+      }
+    }
+  }
+
+  .bloque-auspicios {
     padding: 50px 0;
   }
   .datos > div {
   }
 }
+
 .preVenta-columna-centrada {
   display: flex;
   flex-direction: column;
