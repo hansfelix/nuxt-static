@@ -4,15 +4,28 @@
       <form class="form-lead">
         <h4>¡Déjanos tus datos!</h4>
         <p>Y estarás al tanto de las novedades</p>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Nombres y Apellidos</label>
-          <input
-            v-model="lead.nombre"
-            type="text"
-            class="form-control form-control-sm"
-            id="exampleInputPassword1"
-            placeholder=" "
-          />
+
+        <div class="row">
+          <div class="form-group  col-md-6 pr-0">
+            <label for="exampleInputPassword1">Nombres y Apellidos</label>
+            <input
+              v-model="lead.nombre"
+              type="text"
+              class="form-control form-control-sm"
+              id="exampleInputPassword1"
+              placeholder=" "
+            />
+          </div>
+          <div class="form-group  col-md-6 ">
+            <label for="exampleInputPassword1">Tipo de participante</label>
+            <input
+              v-model="lead.nombre"
+              type="text"
+              class="form-control form-control-sm"
+              id="exampleInputPassword1"
+              placeholder=" "
+            />
+          </div>
         </div>
 
         <div class="form-group">

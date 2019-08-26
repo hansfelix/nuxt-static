@@ -20,12 +20,19 @@ module.exports = {
     ]
   },
 
-  css: [
-     '@/assets/css/main.scss' // use our build, as entered via app.scss
-  ],   
-    
+  modules: ['@nuxtjs/style-resources'],
+  styleResources: {
+    scss: [
+      '@/assets/css/main.scss'
+    ]
+  },
+
+  // css: [
+  //   '@/assets/css/main.scss' // use our build, as entered via app.scss
+  // ],
+
   /*   
   ** Customize the progress-bar color
-  */    
+  */
   loading: { color: '#fff' }
 }

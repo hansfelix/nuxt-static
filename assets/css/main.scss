@@ -40,11 +40,16 @@ $breakpoint-xl: 1800px;
     background: url("/bg_1.jpg");
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     min-height: 100vh;
 
     @include media(sm) {
         height: 100vh;
     }
+
+    @include media(xs) {
+      padding-top: 80px;
+  }
   }
     
 }
@@ -96,4 +101,17 @@ $breakpoint-xl: 1800px;
     .dato-item.lugar {
       width: 240px;
     }
+  }
+
+
+  .texto-simposio{
+    font-weight: bold;
+    color: var(--main-color-2)
+  }
+
+  a {
+    color: var(--main-color-2);
+  }
+  a:hover {
+    color: var(--main-color-1);
   }
