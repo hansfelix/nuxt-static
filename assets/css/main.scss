@@ -61,6 +61,7 @@ $breakpoint-xl: 1800px;
   font-weight: bold;
   position: relative;
   margin-bottom: 1.25rem;
+  z-index: 5;
 
   &::after{
     content: '';
@@ -71,7 +72,14 @@ $breakpoint-xl: 1800px;
     height: 12px;
     bottom: 4px;
     left: -5px;
-    z-index: -2;
+    z-index: -1;
+  }
+
+  &.titulo-1--light{
+    color: white;
+    &::after{
+      background-color: var(--main-color-2);
+    }
   }
 }
 

@@ -74,6 +74,9 @@
     <!-- Boque VIDEO -->
     <section class="bloque-video">
       <div class="container" style="max-width:750px">
+        <h2 class="text-center mb-5">
+          <span class="titulo-1 titulo-1--light">¿Por qué asistir?</span>
+        </h2>
         <style>
   .embed-container {
     position: relative;
@@ -101,6 +104,69 @@
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloque PRECIO -->
+    <section class="bloque-precio">
+      <div class="container">
+        <h2 class="text-center mb-5">
+          <span class="titulo-1">Precios</span>
+        </h2>
+        <p class="mb-5">
+          Todas las entradas incluyen 💻
+          <strong>certificado digital</strong> y ☕
+          <strong>coffee break</strong>.
+        </p>
+        <div class="row">
+          <div class="col-12 col-sm-3 ponente">
+            <div class="card card-precio">
+              <div class="card-body">
+                <h5 class="card-title card-precio__title">Estudiante IEEE</h5>
+                <h5 class="card-precio__precio">
+                  <small>S/.</small>100
+                </h5>
+                <a href="#" class="btn card-precio__btn">LO QUIERO</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-3 ponente">
+            <div class="card card-precio">
+              <div class="card-body">
+                <h5 class="card-title card-precio__title">Estudiante</h5>
+                <h5 class="card-precio__precio">
+                  <small>S/.</small> 125
+                </h5>
+                <a href="#" class="btn card-precio__btn">LO QUIERO</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-3 ponente">
+            <div class="card card-precio">
+              <div class="card-body">
+                <h5 class="card-title card-precio__title">Profesional IEEE</h5>
+                <h5 class="card-precio__precio">
+                  <small>S/.</small> 150
+                </h5>
+                <a href="#" class="btn card-precio__btn">LO QUIERO</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-3 ponente">
+            <div class="card card-precio">
+              <div class="card-body">
+                <h5 class="card-title card-precio__title">Profesional</h5>
+                <h5 class="card-precio__precio">
+                  <small>S/.</small> 200
+                </h5>
+                <a href="#" class="btn card-precio__btn">LO QUIERO</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -275,6 +341,56 @@ export default {
     background-position: center;
     background-attachment: fixed;
   }
+
+  .bloque-precio {
+    padding: 50px 0;
+    text-align: center;
+
+    .card-precio {
+      margin-bottom: 10px;
+    }
+
+    .card-body {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      @include media(sm) {
+        justify-content: center;
+      }
+    }
+
+    .card-precio__title {
+      font-size: 1.4rem;
+      color: var(--main-color-1);
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    .card-precio__precio {
+      font-size: 2.5rem;
+      margin: 20px 0px;
+
+      @include media(xs) {
+        margin-left: auto;
+        margin-top: 0;
+      }
+    }
+
+    .card-precio__btn {
+      flex: 1 0 100%;
+      color: #fff;
+      background-color: var(--main-color-2);
+      border-color: var(--main-color-2);
+
+      @include media(sm) {
+        max-width: 150px;
+      }
+    }
+  }
+
   .bloque-ponentes {
     // background-color: var(--main-color-1);
     padding: 50px 0;
