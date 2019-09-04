@@ -4,9 +4,9 @@
       <div class="footer__sub-container">
         <div class="footer__sub-container-izquierda">
           <img
-            src="https://simposio-energias-renovables.firebaseapp.com/static/img/logo-rama.1f79b9f.png"
+            src="/logo-ias-blanco.png"
             alt
-            srcset
+            style="max-width: 100%;"
           />
         </div>
         <div class="footer__sub-container-derecha">
