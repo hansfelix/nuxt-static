@@ -5,10 +5,10 @@
     <section class="bloque bloque-principal">
       <div class="container h-100">
         <div class="row h-100 align-content-center">
-          <div class="col-md-8 preVenta-columna-centrada">
+          <div class="col-lg-8 preVenta-columna-centrada">
             <img src="/logo-con-frase.png" width="475px" class="img-principal" srcset />
 
-            <div class="row mt-4 d-none d-sm-flex">
+            <div class="row mt-4 d-sm-flex">
               <div class="mr-4">
                 <img src="/index_fechas.png" alt width="140px" />
               </div>
@@ -18,7 +18,7 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <!--align-self-center -->
             <!-- Formulario Lead -->
             <LeadForm />

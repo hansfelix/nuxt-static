@@ -6,7 +6,7 @@
         <p>Y estarás al tanto de las novedades</p>
 
         <div class="row">
-          <div class="form-group  col-md-6 pr-0">
+          <div class="form-group col-md-6 pr-md-0">
             <label for="exampleInputPassword1">Nombres y Apellidos</label>
             <input
               v-model="lead.nombre"
@@ -19,7 +19,7 @@
           <div class="form-group  col-md-6 ">
             <label for="exampleInputPassword1">Tipo de participante</label>
             <input
-              v-model="lead.nombre"
+              v-model="lead.tipo"
               type="text"
               class="form-control form-control-sm"
               id="exampleInputPassword1"
@@ -41,7 +41,7 @@
         </div>
 
         <div class="row">
-          <div class="form-group col-md-5 pr-0">
+          <div class="form-group col-md-5 pr-md-0">
             <label for="exampleInputPassword1">Celular</label>
             <input
               v-model="lead.celular"
