@@ -109,9 +109,12 @@ export default {
 }
 
 .button-ws {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--main-color-2);
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background-color: var(--main-color-2);
   color: white;
