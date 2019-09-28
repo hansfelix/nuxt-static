@@ -1,6 +1,6 @@
 <template>
   <div class="preVenta">
-    <NavBar logoUrl="/logo-udep.png"/>
+    <NavBar logoUrl="/logo-udep.png" />
     <!-- Bloque principal -->
     <section class="bloque bloque-principal">
       <div class="container h-100">
@@ -120,52 +120,20 @@
           <strong>coffee break</strong>.
         </p>
         <div class="row">
-          <div class="col-12 col-sm-3 ponente">
-            <div class="card card-precio">
-              <div class="card-body">
-                <h5 class="card-title card-precio__title">Estudiante IEEE</h5>
-                <h5 class="card-precio__precio">
-                  <small>S/ </small>130
-                </h5>
-                <a href="#" class="btn card-precio__btn">LO QUIERO</a>
-              </div>
-            </div>
+          <div class="col-6 col-sm-6 col-md-3">
+            <PriceCard title="Estudiante IEEE" price="130" />
           </div>
 
-          <div class="col-12 col-sm-3 ponente">
-            <div class="card card-precio">
-              <div class="card-body">
-                <h5 class="card-title card-precio__title">Estudiante</h5>
-                <h5 class="card-precio__precio">
-                  <small>S/ </small> 180
-                </h5>
-                <a href="#" class="btn card-precio__btn">LO QUIERO</a>
-              </div>
-            </div>
+          <div class="col-6 col-sm-6 col-md-3">
+            <PriceCard title="Estudiante" price="180" />
           </div>
 
-          <div class="col-12 col-sm-3 ponente">
-            <div class="card card-precio">
-              <div class="card-body">
-                <h5 class="card-title card-precio__title">Profesional IEEE</h5>
-                <h5 class="card-precio__precio">
-                  <small>S/ </small> 230
-                </h5>
-                <a href="#" class="btn card-precio__btn">LO QUIERO</a>
-              </div>
-            </div>
+          <div class="col-6 col-sm-6 col-md-3">
+            <PriceCard title="Profesional IEEE" price="230" />
           </div>
 
-          <div class="col-12 col-sm-3 ponente">
-            <div class="card card-precio">
-              <div class="card-body">
-                <h5 class="card-title card-precio__title">Profesional</h5>
-                <h5 class="card-precio__precio">
-                  <small>S/ </small> 280
-                </h5>
-                <a href="#" class="btn card-precio__btn">LO QUIERO</a>
-              </div>
-            </div>
+          <div class="col-6 col-sm-6 col-md-3">
+            <PriceCard title="Profesional" price="280" />
           </div>
         </div>
       </div>
@@ -220,17 +188,19 @@ import landing from "~/layouts/landing.vue";
 import NavBar from "~/components/Navbar.vue";
 import LeadForm from "~/components/LeadForm.vue";
 import Ponente from "~/components/SpeakerCard.vue";
+import PriceCard from "~/components/PriceCard.vue";
 
 export default {
   layout: "landing",
   components: {
     NavBar,
     LeadForm,
-    Ponente
+    Ponente,
+    PriceCard
   },
   data() {
     return {
-    listaPonentes: [
+      listaPonentes: [
         {
           id: 1,
           nombre: "Pedro Gamio",
@@ -315,9 +285,7 @@ export default {
     padding: 50px 0;
     text-align: center;
 
-    .card-precio {
-      margin-bottom: 10px;
-    }
+
 
     .card-body {
       display: flex;
@@ -329,35 +297,9 @@ export default {
       }
     }
 
-    .card-precio__title {
-      font-size: 1.4rem;
-      color: var(--main-color-1);
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    }
 
-    .card-precio__precio {
-      font-size: 2.5rem;
-      margin: 20px 0px;
 
-      @include media(xs) {
-        margin-left: auto;
-        margin-top: 0;
-      }
-    }
-
-    .card-precio__btn {
-      flex: 1 0 100%;
-      color: #fff;
-      background-color: var(--main-color-2);
-      border-color: var(--main-color-2);
-
-      @include media(sm) {
-        max-width: 150px;
-      }
-    }
+    
   }
 
   .bloque-ponentes {

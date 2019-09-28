@@ -17,6 +17,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon-32x32.png' },
       { rel: 'stylesheet', type: 'text/css', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' },
       { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Raleway:400,600,800&display=swap' },
+    ],
+    script: [
+      { src: '/fb-sdk.js' }
     ]
   },
 
