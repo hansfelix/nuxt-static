@@ -7,26 +7,58 @@
         </div>
         <div class="col-8 col-sm-12">
           <div class="card-body text-left text-sm-center pt-sm-0">
-            <h5 class="card-title">
-              {{ fullname }}
+            <h5 class="card-title">{{ fullname }}</h5>
+            <div class="subtitle-container d-flex">
               <p class="card-subtitle">{{ job }}</p>
-            </h5>
-            <a href="#" class="btn btn-sm d-none d-sm-block w-100 btn-primary">Ver mas</a>  
+            </div>
+            <div class="description-container">
+              <p class="card-description">
+                {{ descripcion }}
+              </p>
+            </div>
+            
+            <button @click="showModal = true" class="btn btn-sm w-100 btn-primary">Ver mas</button>
+
           </div> 
         </div>
       </div>         
     </div>
+    
+      <SpeakerModal 
+        :showSpeakerModal="showModal"
+        @close="showModal = false"
+        :ponencias='ponencias'
+        :nombre='fullname'
+        :urlImg='urlImg'
+        :cargo='job'
+        :descripcion='descripcion'
+      />
+
   </div>
 </template>
 
 <script>
+import Modal from "~/components/Modal.vue";
+import SpeakerModal from "~/components/SpeakerModal/SpeakerModal.vue";
+
 export default {
   props: [
     'fullname' , 
     'urlImg',
     'job',
-    'mostrarCuatro'
-  ]
+    'mostrarCuatro',
+    'ponencias',
+    'descripcion'
+  ],
+  components: {
+    Modal,
+    SpeakerModal
+  },
+  data() {
+    return {
+      showModal: false
+    }; 
+  }
     
 }
 </script>
@@ -57,12 +89,37 @@ export default {
   h5.card-title {
     font-size: 1.08em;
     font-weight: bold;
-    
+    margin-bottom: 7px;
+  }
+  .subtitle-container {
+    height: 2.4em;
+    text-align: left;
+    margin-bottom: 7px;
     .card-subtitle {
-      font-size: 0.88em;
+      font-size: 0.85em;
       font-weight: normal;
-      padding-top: 7px;
+      margin-top: 0;
+      width: 100%;
+      @include media(sm) {
+        text-align: center;
+      }
     }
   }
+  .description-container {
+    display: none;
+    @include media(sm) {
+      display: block;
+      .card-description {
+        font-size: 0.75em;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+      }
+    }
+    
+  }
+  
 } 
 </style>

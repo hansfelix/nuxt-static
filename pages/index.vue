@@ -149,9 +149,11 @@
           <ponente
             v-for="ponente in listaPonentes"
             :key="ponente.id"
-            v-bind:fullname="ponente.nombre"
-            v-bind:urlImg="ponente.urlImg"
-            v-bind:job="ponente.puesto"
+            :fullname="ponente.nombre"
+            :urlImg="ponente.urlImg"
+            :job="ponente.puesto"
+            :ponencias='ponente.ponencias'
+            :descripcion='ponente.descripcion'
           ></ponente>
         </div>
       </div>
@@ -206,7 +208,15 @@ export default {
           nombre: "Pedro Gamio",
           urlImg:
             "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/PEDROGAMIO.jpg",
-          puesto: "Ex Vice Ministro de Energía del Perú"
+          puesto: "Ex Vice Ministro de Energía del Perú",
+          descripcion: "Ingeniero Eléctrico por la Academia Estatal Politécnica de Belarús, Master of Science en Ingeniería por la Academia Estatal Politécnica de Belarús, Máster en Energías Renovables por la Universidad Europea de Madrid, también posee un doctorado en Ingeniería Eléctrica por la Universidad Carlos III de Madrid.",
+          ponencias: [
+            {
+              titulo: "Rumbo al bicentenario: Cómo se hace realidad el mercado de las RER y cuál es su futuro en el Perú",
+              horario: "Viernes 14 de diciembre, 17:00 - 17:45",
+              tema: "Políticas de desarrollo eléctrico sostenible"
+            }
+          ]
         },
         {
           id: 2,
