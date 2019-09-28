@@ -21,7 +21,7 @@ export default {
   components: {Footer},
 
   created(){
-      //   window.fbAsyncInit = function() {
+      //   $window.fbAsyncInit = function() {
       //     FB.init({
       //       xfbml            : true,
       //       version          : 'v4.0'

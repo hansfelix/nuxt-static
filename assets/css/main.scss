@@ -1,15 +1,16 @@
 // Variables Responsive
 // --------------------
-$breakpoint-xs: 599px;
+$breakpoint-xs: 0px;
 $breakpoint-sm: 576px;
-$breakpoint-md: 900px;
-$breakpoint-lg: 1200px;
-$breakpoint-xl: 1800px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1800px;
 
 
 @mixin media($media) {
   @if $media == xs {
-    @media (max-width: $breakpoint-sm) { @content; }
+    @media (min-width: $breakpoint-sm) { @content; }
   }
   @else if $media == sm {
     @media (min-width: $breakpoint-sm) { @content; }
@@ -22,6 +23,9 @@ $breakpoint-xl: 1800px;
   }
   @else if $media == xl {
     @media (min-width: $breakpoint-xl) { @content; }
+  }
+  @else if $media == xxl {
+    @media (min-width: $breakpoint-xxl) { @content; }
   }
 }
 
