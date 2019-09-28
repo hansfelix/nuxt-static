@@ -8,8 +8,10 @@
         <ponente
           v-for="ponente in listaPonentes"
           :key="ponente.id"
+          :mostrarCuatro="true"
           v-bind:fullname="ponente.nombre"
           v-bind:urlImg="ponente.urlImg"
+          v-bind:job="ponente.puesto"
         ></ponente>
           
       </div>
@@ -35,55 +37,64 @@ export default {
           id: 1,
           nombre: "Pedro Gamio",
           urlImg:
-            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/PEDROGAMIO.jpg"
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/PEDROGAMIO.jpg",
+          puesto: "Ex Vice Ministro de Energía del Perú"
         },
         {
           id: 2,
           nombre: "Alberto Rios",
           urlImg:
-            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/ALBERTORIOS.jpg"
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/ALBERTORIOS.jpg",
+          puesto: "Ex Vice Ministro de Energía del Perú"
         },
         {
           id: 3,
           nombre: "Herrera Descalzi",
           urlImg:
-            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/HERRERADESCALZI.jpg"
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/HERRERADESCALZI.jpg",
+          puesto: "Ex-ministro de Energía del Perú"
         },
         {
           id: 4,
           nombre: "Julia Justo",
           urlImg:
-            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/JULIAJUSTO.jpg"
-        },
-        {
-          id: 4,
-          nombre: "César Butrón",
-          urlImg:
-            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/CESARBUTRON.jpg"
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/JULIAJUSTO.jpg",
+          puesto: "Directora Ejecutiva del Fondo Nacional del Ambiente"
         },
         {
           id: 5,
-          nombre: "Adolfo Rojas",
+          nombre: "César Butrón",
           urlImg:
-            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/ADOLFOROJAS.jpg"
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/CESARBUTRON.jpg",
+          puesto: "Presidente del COES SINAC"
         },
         {
           id: 6,
-          nombre: "Luis Flores",
+          nombre: "Adolfo Rojas",
           urlImg:
-            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/LUISFLORES.jpg"
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/ADOLFOROJAS.jpg",
+          puesto: "Gerente de Negocios LATAM, SUSTAINABLEARTH"
         },
         {
           id: 7,
-          nombre: "Edwin Ertean",
+          nombre: "Luis Flores",
           urlImg:
-            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/EDWINDERTEAN.jpg"
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/LUISFLORES.jpg",
+          puesto: "Head of Regulatory Affairs - Renewable Energies, ENEL PERÚ"
         },
         {
           id: 8,
+          nombre: "Edwin Derteano",
+          urlImg:
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/EDWINDERTEAN.jpg",
+          puesto: "Director de Asociación Automotriz del Perú"
+        },
+        {
+          id: 9,
           nombre: "Tomás Luy",
           urlImg:
-            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/TOMASLUY.jpg"
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/TOMASLUY.jpg",
+          puesto: "Gerente General, Novum Solar"
         }
       ]
     };

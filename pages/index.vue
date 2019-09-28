@@ -1,6 +1,6 @@
 <template>
   <div class="preVenta">
-    <NavBar logoUrl="/logo-udep.png" :mostrarNavegacion="true" />
+    <NavBar logoUrl="/logo-udep.png"/>
     <!-- Bloque principal -->
     <section class="bloque bloque-principal">
       <div class="container h-100">
@@ -8,11 +8,11 @@
           <div class="col-lg-8 preVenta-columna-centrada">
             <img src="/logo-con-frase.png" width="475px" class="img-principal" srcset />
 
-            <div class="row mt-4 d-sm-flex">
-              <div class="mr-4">
+            <div class="row my-3 text-center">
+              <div class="col-12 col-md-6 mb-2 mb-md-0 text-md-rigth">
                 <img src="/index_fechas.png" alt width="140px" />
               </div>
-              <div class>
+              <div class="col-12 col-md-6 mt-2 mt-md-0 text-md-left">
                 <img src="/index_lugar.png" alt width="250px" />
               </div>
             </div>
@@ -178,73 +178,13 @@
           <span class="titulo-1">Ponentes</span>
         </h2>
         <div class="row">
-          <div class="col ponente">
-            <img src="/ponentes/javier-peon.png" width="140px" height="140px" class="ponente__img" />
-            <h4 class="ponente__nombre">Javier Peón</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
-          <div class="col ponente">
-            <img src="/ponentes/cesar-butron.jpg" width="140px" height="140px" class="ponente__img" />
-            <h4 class="ponente__nombre">César Butron</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
-          <div class="col ponente">
-            <img src="/ponentes/adolfo-rojas.jpg" width="140px" height="140px" class="ponente__img" />
-            <h4 class="ponente__nombre">Adolfo Rojas</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
-          <div class="col ponente">
-            <img src="/ponentes/daniel-cumpa.jpg" width="140px" height="140px" class="ponente__img" />
-            <h4 class="ponente__nombre">Denis Zarate</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
-          <div class="col ponente">
-            <img
-              src="/ponentes/david-humpire.jpg"
-              width="140px"
-              height="150px"
-              class="ponente__img"
-            />
-            <h4 class="ponente__nombre">Rodolfo Zamalloa</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
-        </div>
-        <div class="row pt-4">
-          <div class="col ponente">
-            <img src="/ponentes/tomas-luy.jpg" width="140px" height="140px" class="ponente__img" />
-            <h4 class="ponente__nombre">Jorge Guimac</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
-          <div class="col ponente">
-            <img
-              src="/ponentes/orlando-chavez.jpg"
-              width="140px"
-              height="140px"
-              class="ponente__img"
-            />
-            <h4 class="ponente__nombre">Darwin Medina</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
-          <div class="col ponente">
-            <img src="/ponentes/luis-flores.jpg" width="140px" height="140px" class="ponente__img" />
-            <h4 class="ponente__nombre">Riquel Mitma</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
-          <div class="col ponente">
-            <img
-              src="/ponentes/edwin-derteano.jpg"
-              width="140px"
-              height="140px"
-              class="ponente__img"
-            />
-            <h4 class="ponente__nombre">Luis Espinoza</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
-          <div class="col ponente">
-            <img src="/ponentes/alberto-rios.jpg" width="140px" height="150px" class="ponente__img" />
-            <h4 class="ponente__nombre">Alberto Rios</h4>
-            <p>Director of Client Services en Clix Marketing</p>
-          </div>
+          <ponente
+            v-for="ponente in listaPonentes"
+            :key="ponente.id"
+            v-bind:fullname="ponente.nombre"
+            v-bind:urlImg="ponente.urlImg"
+            v-bind:job="ponente.puesto"
+          ></ponente>
         </div>
       </div>
     </section>
@@ -279,12 +219,41 @@
 import landing from "~/layouts/landing.vue";
 import NavBar from "~/components/Navbar.vue";
 import LeadForm from "~/components/LeadForm.vue";
+import Ponente from "~/components/SpeakerCard.vue";
 
 export default {
   layout: "landing",
   components: {
     NavBar,
-    LeadForm
+    LeadForm,
+    Ponente
+  },
+  data() {
+    return {
+    listaPonentes: [
+        {
+          id: 1,
+          nombre: "Pedro Gamio",
+          urlImg:
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/PEDROGAMIO.jpg",
+          puesto: "Ex Vice Ministro de Energía del Perú"
+        },
+        {
+          id: 2,
+          nombre: "Alberto Rios",
+          urlImg:
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/ALBERTORIOS.jpg",
+          puesto: "Ex Vice Ministro de Energía del Perú"
+        },
+        {
+          id: 3,
+          nombre: "Herrera Descalzi",
+          urlImg:
+            "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/HERRERADESCALZI.jpg",
+          puesto: "Ex-ministro de Energía del Perú"
+        }
+      ]
+    };
   }
 };
 </script>
@@ -297,7 +266,7 @@ export default {
     width: auto;
 
     @include media(xs) {
-      margin-bottom: 35px;
+      margin-bottom: 15px;
     }
   }
 
@@ -414,8 +383,6 @@ export default {
   .bloque-auspicios {
     padding: 50px 0;
     background-color: #d8d8d8;
-  }
-  .datos > div {
   }
 }
 
