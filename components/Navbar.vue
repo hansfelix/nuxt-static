@@ -74,7 +74,7 @@
 
 <style lang="scss">
 .navbar-logo {
-  height: 45px;
+  height: 40px;
 }
 
 @media (min-width: 768px) {
