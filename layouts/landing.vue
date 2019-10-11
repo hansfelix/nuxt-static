@@ -9,6 +9,8 @@
       attribution="setup_tool"
       page_id="109700820384167"
       theme_color="#91b053"
+      greeting_dialog_display="fade"
+      greeting_dialog_delay="3"
       logged_in_greeting="¡Hola! ¿Necesitas más información?"
       logged_out_greeting="¡Hola! ¿Necesitas más información?"
     ></div>
