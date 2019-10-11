@@ -20,7 +20,10 @@ module.exports = {
     ],
     script: [
       { src: '/fb-sdk.js' }
-    ]
+    ],
+    plugins: [
+      '~/plugins/firebase.js'
+    ],
   },
 
   modules: ['@nuxtjs/style-resources'],

@@ -16,7 +16,7 @@
               placeholder=" "
             />
           </div>
-          <div class="form-group  col-md-6 ">
+          <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Tipo de participante</label>
             <input
               v-model="lead.tipo"
@@ -90,6 +90,8 @@
 </template>
 
 <script>
+import { fireDb } from "~/plugins/firebase.js";
+
 export default {
   data() {
     return {
@@ -103,7 +105,24 @@ export default {
     };
   },
   methods: {
-    enviar() {
+    async enviar() {
+      const leadsRef = fireDb.collection("leads");
+      const lead = this.lead;
+
+      try {
+        await leadsRef.add(lead);
+      } catch (e) {
+        // TODO: error handling
+        console.error(e);
+      }
+
+      // Se realizo correctamente la escritura
+      this.$router.push({
+        path: "/gracias"
+      });
+    },
+
+    enviarAntiguo() {
       console.log("Iniciando envío de Datos");
 
       let datos = this.JSON_to_URLEncoded({
