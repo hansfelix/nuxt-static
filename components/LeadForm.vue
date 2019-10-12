@@ -5,9 +5,9 @@
         <h4>¡Déjanos tus datos!</h4>
         <p>Y estarás al tanto de las novedades</p>
 
-        <p v-if="error">
-          {{ error }}
-        </p>
+        <div class="alert alert-danger" v-if="error">
+          <small>{{ error }}</small>
+        </div>
 
         <div class="row">
           <div class="form-group col-md-6 pr-md-0">
@@ -111,7 +111,7 @@ export default {
 
       if (lead.nombre & lead.email & lead.celular & lead.horarioLlamada) {
         if (!lead.aceptaTyC) {
-
+          this.error = null;
           const leadsRef = fireDb.collection("leads")
 
           try {
