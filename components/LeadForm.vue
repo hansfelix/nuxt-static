@@ -5,58 +5,57 @@
         <h4>¡Déjanos tus datos!</h4>
         <p>Y estarás al tanto de las novedades</p>
 
+        <p v-if="error">
+          {{ error }}
+        </p>
+
         <div class="row">
           <div class="form-group col-md-6 pr-md-0">
-            <label for="exampleInputPassword1">Nombres y Apellidos</label>
+            <label>Nombres y Apellidos</label>
             <input
               v-model="lead.nombre"
               type="text"
               class="form-control form-control-sm"
-              id="exampleInputPassword1"
-              placeholder=" "
             />
           </div>
           <div class="form-group col-md-6">
-            <label for="exampleInputPassword1">Tipo de participante</label>
-            <input
+            <label>Tipo de participante</label>
+            <select
               v-model="lead.tipo"
-              type="text"
               class="form-control form-control-sm"
-              id="exampleInputPassword1"
-              placeholder=" "
-            />
+            >
+              <option>Estudiante IEEE</option>
+              <option>Estudiante</option>
+              <option>Profesional</option>
+              <option>Profesional IEEE</option>
+            </select>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="exampleInputEmail1">Correo</label>
+          <label>Correo</label>
           <input
             v-model="lead.email"
             type="email"
             class="form-control form-control-sm"
-            id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            placeholder=" "
           />
         </div>
 
         <div class="row">
           <div class="form-group col-md-5 pr-md-0">
-            <label for="exampleInputPassword1">Celular</label>
+            <label>Celular</label>
             <input
               v-model="lead.celular"
-              type="text"
+              type="tel"
               class="form-control form-control-sm"
-              id="exampleInputPassword1"
-              placeholder=" "
             />
           </div>
           <div class="form-group col-md-7">
-            <label for="exampleInputPassword1">Horario de llamada</label>
+            <label>Horario de llamada</label>
             <select
               v-model="lead.horarioLlamada"
               class="form-control form-control-sm"
-              id="exampleFormControlSelect1"
             >
               <option>No me llamen</option>
               <option>06:00 - 08:00</option>
@@ -74,9 +73,9 @@
             v-model="lead.aceptaTyC"
             type="checkbox"
             class="custom-control-input"
-            id="exampleCheck1"
+            id="checkbox1"
           />
-          <label class="form-check-label custom-control-label" for="exampleCheck1">
+          <label class="form-check-label custom-control-label" for="checkbox1">
             Acepto los
             <a href="#">términos de uso de datos de la Universidad de Piura</a>
           </label>
@@ -95,31 +94,44 @@ import { fireDb } from "~/plugins/firebase.js";
 export default {
   data() {
     return {
+      error: null,
       lead: {
         nombre: "",
         email: "",
         celular: "",
         horarioLlamada: "",
+        tipo: "",
         aceptaTyC: false
       }
     };
   },
   methods: {
     async enviar() {
-      const leadsRef = fireDb.collection("leads");
-      const lead = this.lead;
+      let lead = this.lead;
 
-      try {
-        await leadsRef.add(lead);
-      } catch (e) {
-        // TODO: error handling
-        console.error(e);
+      if (lead.nombre & lead.email & lead.celular & lead.horarioLlamada) {
+        if (!lead.aceptaTyC) {
+
+          const leadsRef = fireDb.collection("leads")
+
+          try {
+            await leadsRef.add(lead);
+          } catch (e) {
+            // TODO: error handling
+            console.error(e);
+          }
+
+          // Se realizo correctamente la escritura
+          this.$router.push({
+            path: "/gracias"
+          });
+        } else {
+          this.error = "Debe aceptar los terminos y condiciones."
+        }
+      } else {
+        this.error = "Debe llenar todos los campos."
       }
-
-      // Se realizo correctamente la escritura
-      this.$router.push({
-        path: "/gracias"
-      });
+      
     },
 
     enviarAntiguo() {

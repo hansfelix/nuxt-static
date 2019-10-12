@@ -29,9 +29,9 @@
             <Ponencia
             v-for="(ponencia, index) in ponencias"
             :key="index"
-            :titulo="ponencia.titulo"
-            :horario="ponencia.horario"
-            :tema="ponencia.tema"
+            :titulo="ponencia.title"
+            :horario="ponencia.datetime"
+            :tema="ponencia.topic"
             />
           </div>
         </div>
