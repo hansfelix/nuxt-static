@@ -29,6 +29,10 @@ export default {
 
   &__content {
     padding-top: 76px;
+    background: url("/bg_2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
   }
 }
 
