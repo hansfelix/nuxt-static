@@ -19,8 +19,6 @@
           </div>
 
           <div class="col-lg-4">
-            <!--align-self-center -->
-            <!-- Formulario Lead -->
             <LeadForm />
           </div>
         </div>
@@ -249,15 +247,11 @@ export default {
       margin-bottom: 15px;
     }
   }
-
   .bloque-descripcion {
-    // background-color: #bed062;
     color: #404040;
     padding: 60px 0;
 
     .bloque-descripcion--contenido {
-      // display: flex;
-
       p {
         font-size: 1.1rem;
         line-height: 2rem;
@@ -340,6 +334,7 @@ export default {
 
 .preVenta-columna-centrada {
   display: flex;
+  margin-top: 80px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

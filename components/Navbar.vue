@@ -18,7 +18,7 @@
         
       </div>
 
-      <div class="navbar-collapse flex-grow-1 text-center" :class="{'collapse': hideNavbar}">
+      <div class="navbar-collapse flex-grow-1 text-center order-2 order-lg-1" :class="{'collapse': hideNavbar}">
         <span class="navbar-nav ml-auto flex-nowrap">
           <nuxt-link class="nav-item nav-link" to="/" exact>
             Inicio
@@ -30,7 +30,7 @@
       </div>
 
       <a
-        class="button-ws"
+        class="button-ws order-1 order-lg-2"
         target="_blank"
         href="https://wa.me/51922252728?text=Me%20gustaría%20saber%20sobre%20el%20simposio"
       >

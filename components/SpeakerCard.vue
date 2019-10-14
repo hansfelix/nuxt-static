@@ -28,6 +28,7 @@
       :urlImg="urlImg"
       :cargo="job"
       :descripcion="descripcion"
+      :linkedin="linkedin"
     />
   </div>
 </template>
@@ -42,7 +43,8 @@ export default {
     "job",
     "mostrarCuatro",
     "ponencias",
-    "descripcion"
+    "descripcion",
+    "linkedin"
   ],
   components: {
     SpeakerModal

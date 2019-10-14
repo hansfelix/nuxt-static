@@ -14,6 +14,7 @@
           :job="ponente.job"
           :ponencias='ponente.speakings'
           :descripcion='ponente.description'
+          :linkedin="ponente.linkedin"
         ></ponente>
           
       </div>
@@ -90,16 +91,20 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .links {
   padding-top: 15px;
 }
-
 .w-20 {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 16.66% !important;
   flex: 0 0 16.66% !important;
   max-width: 16.66%;
-  /* margin-right: 15px; */
+}
+.subtitulo-1 {
+  max-width: 100%;
+  @include media(lg) {
+    max-width: 70%;
+  }
 }
 </style>

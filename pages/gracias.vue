@@ -39,10 +39,15 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
-  margin-bottom: 56px;
+  max-width: 100%;
+  width: 100%;
   &_mensaje {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+
+    @include media(md) {
+      width: 60%;
+    }
 
     .card-thanks {
       width: 80%;
