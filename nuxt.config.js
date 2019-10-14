@@ -19,7 +19,8 @@ module.exports = {
       { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Raleway:400,600,800&display=swap' },
     ],
     script: [
-      { src: '/fb-sdk.js' }
+      { src: '/fb-sdk.js' },
+      { src: 'https://kit.fontawesome.com/3b64c4f053.js' }
     ],
     plugins: [
       '~/plugins/firebase.js'

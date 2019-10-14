@@ -2,8 +2,8 @@
   <div class="card">
     <div class="card-body">
       <form class="lead-form">
-        <h4>¡Déjanos tus datos!</h4>
-        <p>Y estarás al tanto de las novedades</p>
+        <h5 class="lead-form__title">Informes</h5>
+        <p class="lead-form__description">Te enviaremos toda la información del evento.</p>
 
         <div class="alert alert-danger" v-if="error">
           <small>{{ error }}</small>
@@ -11,11 +11,11 @@
 
         <div class="row">
           <div class="form-group col-md-6 pr-md-0">
-            <label>Nombres y Apellidos</label>
+            <label class="lead-form__label">Nombres y Apellidos</label>
             <input v-model="lead.nombre" type="text" class="form-control form-control-sm" />
           </div>
           <div class="form-group col-md-6">
-            <label>Tipo de participante</label>
+            <label class="lead-form__label">Tipo de participante</label>
             <select v-model="lead.tipo" class="form-control form-control-sm">
               <option>Estudiante IEEE</option>
               <option>Estudiante</option>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-          <label>Correo</label>
+          <label class="lead-form__label">Correo</label>
           <input
             v-model="lead.email"
             type="email"
@@ -37,11 +37,11 @@
 
         <div class="row">
           <div class="form-group col-md-5 pr-md-0">
-            <label>Celular</label>
+            <label class="lead-form__label">Celular</label>
             <input v-model="lead.celular" type="tel" class="form-control form-control-sm" />
           </div>
           <div class="form-group col-md-7">
-            <label>Horario de llamada</label>
+            <label class="lead-form__label">Horario de llamada</label>
             <select v-model="lead.horarioLlamada" class="form-control form-control-sm">
               <option>No me llamen</option>
               <option>06:00 - 08:00</option>
@@ -61,13 +61,13 @@
             class="custom-control-input"
             id="checkbox1"
           />
-          <label class="form-check-label custom-control-label" for="checkbox1">
+          <label class="lead-form__label form-check-label custom-control-label" for="checkbox1">
             Acepto los
             <a href="#">términos de uso de datos de la Universidad de Piura</a>
           </label>
         </div>
         <div class="text-right">
-          <button type="button" class="btn btn-primary btn-sm" @click="enviar">Registrarme</button>
+          <button class="lead-form__button btn btn-sm" type="button" @click="enviar">Registrarme</button>
         </div>
       </form>
     </div>
@@ -118,27 +118,48 @@ export default {
       } else {
         this.error = "Debe llenar todos los campos.";
       }
-    },
-
+    }
   }
 };
 </script>
 
 
-<style>
+<style lang="scss">
+.lead-form {
+  &__title {
+    // font-weight: bold;
+    color: var(--main-color-2);
+    margin-bottom: 2px;
+  }
+
+  &__description {
+    font-size: 14px;
+  }
+
+  &__label {
+    margin-bottom: 0.2rem;
+    font-size: 13px;
+    color: var(--main-color-3);
+  }
+
+  &__button {
+    width: 100%;
+    color: white;
+    background-color: var(--main-color-2);
+    border-color: var(--main-color-2);
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
 .lead-form .form-group {
   margin-bottom: 0.5rem;
 }
 
 .lead-form h4 {
   margin-bottom: 0.2rem;
-}
-
-.lead-form label {
-  margin-bottom: 0.2rem;
-  font-size: 0.9rem;
-  /* font-weight: bold; */
-  color: var(--main-color-3);
 }
 
 .lead-form .form-check-label {

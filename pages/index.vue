@@ -1,34 +1,41 @@
 <template>
   <div class="preVenta">
-    <NavBar logoUrl="/logo-udep.png" />
     <!-- Bloque principal -->
-    <section class="bloque bloque-principal">
-      <div class="container h-100">
-        <div class="row h-100 align-content-center">
-          <div class="col-lg-8 preVenta-columna-centrada">
-            <img src="/logo-con-frase.png" width="475px" class="img-principal" srcset />
-
-            <div class="row my-3 text-center">
-              <div class="col-12 col-md-6 mb-2 mb-md-0 text-md-rigth">
-                <img src="/index_fechas.png" alt width="140px" />
+    <section class="bloque bloque-principal container">
+      <div class="row h-100 align-content-center" style="flex: 1">
+        <div class="col-lg-8 preVenta-columna-centrada">
+          <img class="bloque-principal__logo" src="/logos/logo-simposio.svg" width="475px" srcset />
+          <p
+            class="bloque-principal__phrase"
+          >Descrubre el camino para la transformación energética del Perú</p>
+          <div class="bloque-principal__information">
+            <div class="bloque-principal__information-item">
+              <i class="bloque-principal__information-icon fas fa-calendar-alt"></i>
+              <div>
+                <div class="bloque-principal__information-title">13 y 14</div>
+                <div class="bloque-principal__information-sub-title">de diciembre</div>
               </div>
-              <div class="col-12 col-md-6 mt-2 mt-md-0 text-md-left">
-                <img src="/index_lugar.png" alt width="250px" />
+            </div>
+
+            <div class="bloque-principal__information-item">
+              <i class="bloque-principal__information-icon fas fa-map-marker-alt"></i>
+              <div>
+                <div class="bloque-principal__information-title">Universidad de Piura</div>
+                <div class="bloque-principal__information-sub-title">(Sede Lima)</div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col-lg-4">
-            <!--align-self-center -->
-            <!-- Formulario Lead -->
-            <LeadForm />
-          </div>
+        <div class="col-lg-4">
+          <!-- Formulario Lead -->
+          <LeadForm />
         </div>
       </div>
     </section>
 
     <!-- Bloque DESCRIPCIÓN -->
-    <section class="bloque-descripcion" style="width:100%">
+    <section class="bloque-descripcion" style="width:100%; background: white">
       <div class="container">
         <div class="bloque-descripcion--contenido">
           <h2 class="text-center mb-4">
@@ -78,22 +85,22 @@
           <span class="titulo-1 titulo-1--light">¿Por qué asistir?</span>
         </h2>
         <style>
-        .embed-container {
-          position: relative;
-          padding-bottom: 56.25%;
-          height: 0;
-          overflow: hidden;
-          max-width: 100%;
-        }
-        .embed-container iframe,
-        .embed-container object,
-        .embed-container embed {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
+  .embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .embed-container iframe,
+  .embed-container object,
+  .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
         </style>
         <div class="embed-container">
           <iframe
@@ -152,8 +159,8 @@
             :fullname="ponente.nombre"
             :urlImg="ponente.urlImg"
             :job="ponente.puesto"
-            :ponencias='ponente.ponencias'
-            :descripcion='ponente.descripcion'
+            :ponencias="ponente.ponencias"
+            :descripcion="ponente.descripcion"
           ></ponente>
         </div>
       </div>
@@ -187,7 +194,6 @@
 
 <script>
 import landing from "~/layouts/landing.vue";
-import NavBar from "~/components/Navbar.vue";
 import LeadForm from "~/components/LeadForm.vue";
 import Ponente from "~/components/SpeakerCard.vue";
 import PriceCard from "~/components/PriceCard.vue";
@@ -195,7 +201,6 @@ import PriceCard from "~/components/PriceCard.vue";
 export default {
   layout: "landing",
   components: {
-    NavBar,
     LeadForm,
     Ponente,
     PriceCard
@@ -209,10 +214,12 @@ export default {
           urlImg:
             "https://simposio-energias-renovables.firebaseapp.com/static/ponentes/PEDROGAMIO.jpg",
           puesto: "Ex Vice Ministro de Energía del Perú",
-          descripcion: "Ingeniero Eléctrico por la Academia Estatal Politécnica de Belarús, Master of Science en Ingeniería por la Academia Estatal Politécnica de Belarús, Máster en Energías Renovables por la Universidad Europea de Madrid, también posee un doctorado en Ingeniería Eléctrica por la Universidad Carlos III de Madrid.",
+          descripcion:
+            "Ingeniero Eléctrico por la Academia Estatal Politécnica de Belarús, Master of Science en Ingeniería por la Academia Estatal Politécnica de Belarús, Máster en Energías Renovables por la Universidad Europea de Madrid, también posee un doctorado en Ingeniería Eléctrica por la Universidad Carlos III de Madrid.",
           ponencias: [
             {
-              titulo: "Rumbo al bicentenario: Cómo se hace realidad el mercado de las RER y cuál es su futuro en el Perú",
+              titulo:
+                "Rumbo al bicentenario: Cómo se hace realidad el mercado de las RER y cuál es su futuro en el Perú",
               horario: "Viernes 14 de diciembre, 17:00 - 17:45",
               tema: "Políticas de desarrollo eléctrico sostenible"
             }
@@ -240,16 +247,6 @@ export default {
 
 <style lang="scss">
 .preVenta {
-  .img-principal {
-    max-width: 100%;
-    height: auto;
-    width: auto;
-
-    @include media(xs) {
-      margin-bottom: 15px;
-    }
-  }
-
   .bloque-descripcion {
     // background-color: #bed062;
     color: #404040;
@@ -295,8 +292,6 @@ export default {
     padding: 50px 0;
     text-align: center;
 
-
-
     .card-body {
       display: flex;
       align-items: center;
@@ -306,10 +301,6 @@ export default {
         justify-content: center;
       }
     }
-
-
-
-    
   }
 
   .bloque-ponentes {
