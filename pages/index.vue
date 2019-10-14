@@ -30,9 +30,6 @@
         <div class="col-lg-4">
           <!-- Formulario Lead -->
           <LeadForm />
-          <div class="col-lg-4">
-            <LeadForm />
-          </div>
         </div>
       </div>
     </section>
@@ -331,7 +328,6 @@ export default {
 
 .preVenta-columna-centrada {
   display: flex;
-  margin-top: 80px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
