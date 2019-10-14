@@ -248,6 +248,7 @@ export default {
 <style lang="scss">
 .preVenta {
   .bloque-descripcion {
+    background: white;
     color: #404040;
     padding: 60px 0;
 
@@ -266,6 +267,7 @@ export default {
   }
 
   .bloque-ejes {
+    background: white;
     padding: 60px 0;
 
     .eje {
@@ -274,6 +276,7 @@ export default {
   }
 
   .bloque-video {
+    background: white;
     padding: 60px 0;
     background: linear-gradient(
         rgba(195, 207, 106, 0.9),
@@ -286,6 +289,7 @@ export default {
   }
 
   .bloque-precio {
+    background: white;
     padding: 50px 0;
     text-align: center;
 
@@ -301,6 +305,7 @@ export default {
   }
 
   .bloque-ponentes {
+    background: white;
     // background-color: var(--main-color-1);
     padding: 50px 0;
     // color: white;
