@@ -39,11 +39,8 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
-<<<<<<< HEAD
   max-width: 100%;
   width: 100%;
-=======
->>>>>>> 559df9be953054295c826d165c4f9a982d0c4853
   &_mensaje {
     width: 90%;
     margin: 0 auto;
