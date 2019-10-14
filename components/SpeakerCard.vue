@@ -6,13 +6,13 @@
         <img class="speaker-card__img" :src="urlImg" alt="..." />
 
         <!-- Nombres del ponente  -->
-        <h5 class="card-title speaker-card__name">{{ fullname }}</h5>
+        <h5 class="speaker-card__name">{{ fullname }}</h5>
 
         <!-- Puesto del ponente  -->
-        <p class="speaker-card__job card-subtitle">{{ job }}</p>
+        <p class="speaker-card__job">{{ job }}</p>
 
         <!-- Descripción del ponente  -->
-        <p class="speaker-card__descripcion card-description">{{ descripcion }}</p>
+        <p class="speaker-card__descripcion">{{ descripcion }}</p>
 
         <div class="speaker-card__actions">
           <div class="speaker-card__button" @click="showModal = true">VER MÁS</div>

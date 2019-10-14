@@ -40,5 +40,13 @@ module.exports = {
   /*   
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' }
+  loading: { color: '#fff' },
+
+  build: {
+    extend(config, ctx) {
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    }
+  }
 }

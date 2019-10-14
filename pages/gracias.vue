@@ -1,5 +1,5 @@
 <template>
-  <div class="gracias-page container">
+  <div class="gracias-page">
     <div class="gracias-page_mensaje">
 
       <div class="card card-thanks">
@@ -39,7 +39,6 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
-  margin-bottom: 56px;
   &_mensaje {
     width: 80%;
     margin: 0 auto;
