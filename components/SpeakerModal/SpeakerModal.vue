@@ -37,8 +37,10 @@
         </div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary">Linkedin</button>
+    <div class="modal-footer" :class="{'d-none' : hasntLinkedin() }">
+      <a class="btn-icon" :href="linkedin" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
     </div>
   </Modal>
 </template>
@@ -58,8 +60,18 @@
       'descripcion',
       'cargo',
       'urlImg',
-      'nombre'
-    ]
+      'nombre',
+      "linkedin"
+    ],
+    methods: {
+      hasntLinkedin() {
+        if(this.linkedin === undefined || this.linkedin == "") {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
   }
 </script>
 
@@ -89,5 +101,21 @@
         font-size: 1.1em;
       }
     }
+  }
+  .btn-icon {
+    border-radius: 50%;
+    color: #fff;
+    background-color: #2867B2;
+    width: 35px;
+    height: 35px;
+    position: relative;
+
+    i {
+      position: absolute;
+      bottom: 50%;
+      right: 50%;
+      transform: translate(50%, 50%);
+    }
+
   }
 </style>
