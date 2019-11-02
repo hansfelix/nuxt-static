@@ -43,7 +43,7 @@
           <div class="form-group col-md-7">
             <label class="lead-form__label">Horario de llamada</label>
             <select v-model="lead.horarioLlamada" class="form-control form-control-sm">
-              <option>No me llamen</option>
+              <!-- <option>No me llamen</option> -->
               <option>06:00 - 08:00</option>
               <option>08:00 - 12:00</option>
               <option>12:00 - 02:00</option>

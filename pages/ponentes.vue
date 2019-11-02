@@ -1,22 +1,28 @@
 <template>
   <section class="bloque bloque-navbar">
     <div class="container">
-      <h1 class="titulo-1">Ponentes de talla</h1>
-      <p class="subtitulo-1">Además contaremos con ponentes de alto prestigio y experiencia, tanto nacional como internacional, en lo referente a energías renovables que harán que el simposio sea práctico y sobre todo útil.</p>
+      <h1 class="titulo-1 mt-5">Ponentes de talla</h1>
+      <p
+        class="subtitulo-1"
+      >Además contaremos con ponentes de alto prestigio y experiencia, tanto nacional como internacional, en lo referente a energías renovables que harán que el simposio sea práctico y sobre todo útil.</p>
       <div class="row">
-    
-        <ponente
-          v-for="ponente in listaPonentes"
-          :key="ponente.key"
-          :mostrarCuatro="true"
-          :fullname="ponente.fullname"
-          :urlImg="ponente.urlimg"
-          :job="ponente.job"
-          :ponencias='ponente.speakings'
-          :descripcion='ponente.description'
-          :linkedin="ponente.linkedin"
-        ></ponente>
-          
+        <template v-if="listaPonentes.length">
+          <ponente
+            v-for="ponente in listaPonentes"
+            :key="ponente.key"
+            :mostrarCuatro="true"
+            :fullname="ponente.fullname"
+            :urlImg="ponente.urlimg"
+            :job="ponente.job"
+            :ponencias="ponente.speakings"
+            :descripcion="ponente.description"
+            :linkedin="ponente.linkedin"
+          ></ponente>
+        </template>
+
+        <template v-else>
+          Cargando ...
+        </template>
       </div>
     </div>
   </section>
@@ -28,8 +34,13 @@ import { fireDb } from "~/plugins/firebase.js";
 import Title from "~/components/Title.vue";
 import Ponente from "~/components/SpeakerCard.vue";
 
-
 export default {
+  head() {
+    return {
+      title: "Ponentes - III Simposio de Energías Renovables"
+    };
+  },
+
   components: {
     Title,
     Ponente
@@ -40,15 +51,22 @@ export default {
       listaPonentes: []
     };
   },
+
   created() {
-    fireDb.collection('ponentes').get()
+    fireDb
+      .collection("ponentes")
+      .get()
       .then(snapshot => {
         this.listaPonentes = [];
-        snapshot.forEach((doc) => {
+        snapshot.forEach(doc => {
           let ponencias = [];
-          fireDb.collection('ponentes').doc(doc.id).collection('ponencias').get()
+          fireDb
+            .collection("ponentes")
+            .doc(doc.id)
+            .collection("ponencias")
+            .get()
             .then(snapshot => {
-              snapshot.forEach((d) => {
+              snapshot.forEach(d => {
                 ponencias.push({
                   datetime: d.data().datetime,
                   title: d.data().title,
@@ -57,7 +75,7 @@ export default {
               });
             })
             .catch(err => {
-              console.log('Error getting documents', err);
+              console.log("Error getting documents", err);
             });
           this.listaPonentes.push({
             key: doc.id,
@@ -68,11 +86,11 @@ export default {
             linkedin: doc.data().linkedin,
             speakings: ponencias
           });
+        });
+      })
+      .catch(err => {
+        console.log("Error getting documents", err);
       });
-    })
-    .catch(err => {
-      console.log('Error getting documents', err);
-    });
   }
   // methods: {
   //   async readPonentesFromFirestore() {
@@ -84,7 +102,6 @@ export default {
   //     } catch (err) {
   //       console.error(err);
   //     }
-
 
   //   }
   // }

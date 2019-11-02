@@ -32,7 +32,7 @@
       <a
         class="button-ws order-1 order-lg-2"
         target="_blank"
-        href="https://wa.me/51922252728?text=Me%20gustaría%20saber%20sobre%20el%20simposio"
+        href="https://wa.me/51996915471?text=Me%20gustaría%20saber%20sobre%20el%20simposio"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

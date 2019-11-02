@@ -11,7 +11,9 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        name: 'description', content: `El III Simposio de Energías Renovables es un evento organizado por la Rama Estudiantil IEEE Universidad de Piura - Sede Lima, Este 2019 tenemos como objetivo fortalecer la red de conocimiento en energías renovables, además de generar espacios de propuestas en el sector energético con viabilidad técnica, social, ambiental y económica para un desarrollo sostenible.`
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon-32x32.png' },

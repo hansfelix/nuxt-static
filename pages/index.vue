@@ -167,7 +167,7 @@
     </section>
 
     <!-- Bloque AUSPICIOS -->
-    <section class="bloque-auspicios">
+    <!-- <section class="bloque-auspicios">
       <div class="container text-center">
         <h5>AUSPICIAN</h5>
         <div class="row">
@@ -188,7 +188,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
